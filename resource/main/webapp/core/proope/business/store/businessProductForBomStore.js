@@ -1,0 +1,19 @@
+/**
+ * 根据产品管理fom表
+ */
+Ext.define("ERP.proope.business.store.businessProductForBomStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.business.model.businessProductForBomModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeBusiness/findProductStorePageResultForBom.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"productList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

@@ -1,0 +1,19 @@
+/**
+ * 查询未处理的销售订单
+ */
+Ext.define("ERP.proope.business.store.businessNotProcessSalesOrderStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.business.model.businessNotProcessSalesOrderModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeBusiness/findNotProcessSalesOrderStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"salesOrderList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

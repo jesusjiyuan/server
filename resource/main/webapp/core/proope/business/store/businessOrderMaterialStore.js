@@ -1,0 +1,19 @@
+/**
+ * 根据订单查询物料使用
+ */
+Ext.define("ERP.proope.business.store.businessOrderMaterialStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.business.model.businessOrderMaterialModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeBusiness/findOrderMaterialStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"orderMaterialList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

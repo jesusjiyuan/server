@@ -1,0 +1,21 @@
+/**
+ * 采购订单到货列表model
+ */
+Ext.define("ERP.proope.quality.model.qualityPurchaseOrderArrivalGoodDetailModel",{
+    extend:"Ext.data.Model",
+    fields:[
+        {name:"dm",type:"string",srotable:true},
+        {name:"dhdm",type:"string",srotable:true},
+        {name:"cgsqmxdm",type:"string",srotable:true},
+        {name:"cgddmxdm",type:"string",srotable:true},
+        {name:"wldm",type:"string",srotable:true},
+        {name:"wlmc",type:"string",srotable:true},
+        {name:"sqsl",type:"string",srotable:true},
+        {name:"dgsl",type:"string",srotable:true},
+        {name:"dhsl",type:"string",srotable:true},
+        {name:"yrksl",type:"string",srotable:true},
+        {name:"cjrqYMDHMS",type:"string",srotable:true},
+        {name:"cjr",type:"string",srotable:true},
+        {name:"gysmc",type:"string",srotable:true}
+    ]
+});

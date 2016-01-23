@@ -1,0 +1,19 @@
+/**
+ * 查询物料库存量
+ */
+Ext.define("ERP.proope.warehouse.store.warehouseMaterialStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.warehouse.model.warehouseMaterialModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeWarehouse/findMaterialInventoryStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"materialInventoryList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

@@ -1,0 +1,19 @@
+/**
+ * 入库表
+ */
+Ext.define("ERP.proope.purchase.store.purchasePutWarehouseStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.purchase.model.purchasePutWarehouseModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopePurchase/findPutWarehouseHistoryStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"putWarehouseHistoryList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

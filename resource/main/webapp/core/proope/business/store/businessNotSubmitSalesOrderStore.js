@@ -1,0 +1,19 @@
+/**
+ * 未提交销售订单
+ */
+Ext.define("ERP.proope.business.store.businessNotSubmitSalesOrderStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.business.model.businessNotSubmitSalesOrderModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeBusiness/findNotSubmitSalesOrderStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"salesOrderList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

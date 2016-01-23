@@ -1,0 +1,19 @@
+/**
+ * 产品入库历史记录Store
+ */
+Ext.define("ERP.proope.produce.store.productPutWarehouseHistoryStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.produce.model.productPutWarehouseHistoryModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeProduce/findProductPutWarehouseHistoryStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"productPutWarehouseHistoryList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

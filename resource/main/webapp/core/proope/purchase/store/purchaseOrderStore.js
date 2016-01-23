@@ -1,0 +1,19 @@
+/**
+ * 查询订单
+ */
+Ext.define("ERP.proope.purchase.store.purchaseOrderStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.purchase.model.purchaseOrderModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopePurchase/findPurchaseOrderStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"purchaseOrderList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

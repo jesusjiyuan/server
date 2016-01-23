@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field">
+  <class name="proope.warehouse.to.entity.ProductInventoryEntity" table="tbl_product_inventory">
+    <id name="cpdm" type="string">
+        <column name="cpdm" />
+        <generator class="assigned" />
+    </id>
+    <property name="sl" type="java.math.BigDecimal">
+        <column name="sl" />
+    </property>
+	<property name="cjrq" type="timestamp">
+	    <column name="cjrq" />
+	</property>
+	<property name="cjr" type="string">
+        <column name="cjr" length="32" />
+    </property>
+    <property name="xgrq" type="timestamp">
+	    <column name="xgrq" />
+	</property>
+	<property name="xgr" type="string">
+        <column name="xgr" length="32" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+/**
+ * 查询领料历史记录Store
+ */
+Ext.define("ERP.proope.produce.store.receiveMaterialHistoryStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.produce.model.receiveMaterialHistoryModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeProduce/findReceiveMaterialHistoryStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"receiveMaterialHistoryEntityList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

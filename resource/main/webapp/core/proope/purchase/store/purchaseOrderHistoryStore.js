@@ -1,0 +1,19 @@
+/**
+ * 查询订单历史
+ */
+Ext.define("ERP.proope.purchase.store.purchaseOrderHistoryStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.purchase.model.purchaseOrderHistoryModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopePurchase/findPurchaseOrderHistoryStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"purchaseOrderHistoryList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

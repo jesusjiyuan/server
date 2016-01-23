@@ -1,0 +1,18 @@
+.icon-grid {
+    background-image:url(../image/icons/grid.png)!important;
+}
+.add {
+    background-image:url(../image/icons/add.gif) !important;
+}
+.option {
+    background-image:url(../image/icons/plugin.gif) !important;
+}
+.remove {
+    background-image:url(../image/icons/delete.gif) !important;
+}
+.edit {
+    background-image:url(../image/icons/application_go.png) !important;
+}
+.pre {
+    background-image:url(../image/icons/book.png) !important;
+}

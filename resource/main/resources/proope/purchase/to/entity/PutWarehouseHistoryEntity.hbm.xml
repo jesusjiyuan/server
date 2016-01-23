@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field">
+  <class name="proope.purchase.to.entity.PutWarehouseHistoryEntity" table="tbl_put_warehouse_history">
+    <id name="dm" type="string">
+        <column name="dm" />
+        <generator class="assigned" />
+    </id>
+    <property name="rkbmdm" type="string">
+        <column name="rkbmdm" />
+    </property>
+    <property name="rkbmmc" type="string">
+        <column name="rkbmmc" />
+    </property>
+    <property name="rklb" type="string">
+        <column name="rklb" />
+    </property>
+	<property name="sccj" type="string">
+        <column name="sccj" />
+    </property>
+	<property name="bz" type="string">
+        <column name="bz" />
+    </property>
+	<property name="cjrq" type="timestamp">
+	    <column name="cjrq" />
+	</property>
+	<property name="cjr" type="string">
+        <column name="cjr" length="32" />
+    </property>
+  </class>
+</hibernate-mapping>

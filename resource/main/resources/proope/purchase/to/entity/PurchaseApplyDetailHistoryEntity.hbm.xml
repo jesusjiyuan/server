@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field">
+  <class name="proope.purchase.to.entity.PurchaseApplyDetailHistoryEntity" table="tbl_purchase_apply_detail_history">
+    <id name="dm" type="string">
+        <column name="dm" />
+        <generator class="assigned" />
+    </id>
+    <property name="cgsqlsdm" type="string">
+        <column name="cgsqlsdm" />
+    </property>
+    <property name="wldm" type="string">
+        <column name="wldm"/>
+    </property>
+    <property name="wlmc" type="string">
+        <column name="wlmc"/>
+    </property>
+    <property name="sqsl" type="java.math.BigDecimal">
+        <column name="sqsl"/>
+    </property>
+    <property name="sjcgsl" type="java.math.BigDecimal">
+        <column name="sjcgsl"/>
+    </property>
+	<property name="cjrq" type="timestamp">
+	    <column name="cjrq"/>
+	</property>
+	<property name="cjr" type="string">
+        <column name="cjr" length="32" />
+    </property>
+  </class>
+</hibernate-mapping>

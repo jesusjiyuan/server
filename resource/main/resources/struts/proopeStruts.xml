@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="proopeBasedata" namespace="/proopeBasedata" extends="default">
+    	<action name="findNotSubmitPurchaseApplyDepartment" class="proope.basedata.action.BasedataAction" method="findNotSubmitPurchaseApplyDepartment">
+        	<result name="departmentResultList" type="json">
+                <param name="root">departmentResultList</param>
+            </result>
+        </action>
+        <action name="findAllMaterial" class="proope.basedata.action.BasedataAction" method="findAllMaterial">
+        	<result name="materialList" type="json">
+                <param name="root">materialList</param>
+            </result>
+        </action>
+        <action name="findAllSupplier" class="proope.basedata.action.BasedataAction" method="findAllSupplier">
+        	<result name="supplierList" type="json">
+                <param name="root">supplierList</param>
+            </result>
+        </action>
+        <action name="findAllClient" class="proope.basedata.action.BasedataAction" method="findAllClient">
+        	<result name="clientList" type="json">
+                <param name="root">clientList</param>
+            </result>
+        </action>
+        <action name="findAllProduct" class="proope.basedata.action.BasedataAction" method="findAllProduct">
+        	<result name="productList" type="json">
+                <param name="root">productList</param>
+            </result>
+        </action>
+    </package>
+
+
+	<package name="proopePurchase" namespace="/proopePurchase" extends="default">
+        <action name="findPurchaseApplyStorePageResult" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyStorePageResult">
+        	<result name="purchaseApplyStorePageResult" type="json">
+                <param name="root">purchaseApplyStorePageResult</param>
+            </result>
+        </action>
+        <action name="createPurchaseApply" class="proope.purchase.action.PurchaseApplyAction" method="createPurchaseApply">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        
+        <action name="findPurchaseApplyDetailResultListByPaId" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyDetailResultListByPaId">
+        	<result name="purchaseApplyDetailResultList" type="json">
+                <param name="root">purchaseApplyDetailResultList</param>
+            </result>
+        </action>
+        <action name="updatePurchaseApply" class="proope.purchase.action.PurchaseApplyAction" method="updatePurchaseApply">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="deletePurchaseApply" class="proope.purchase.action.PurchaseApplyAction" method="deletePurchaseApply">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="submitPurchaseApply" class="proope.purchase.action.PurchaseApplyAction" method="submitPurchaseApply">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        
+        <action name="findPurchaseApplyDetailStorePageResult" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyDetailStorePageResult">
+        	<result name="purchaseApplyDetailStorePageResult" type="json">
+                <param name="root">purchaseApplyDetailStorePageResult</param>
+            </result>
+        </action>
+        
+       <action name="findPurchaseApplyHistoryStorePageResult" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyHistoryStorePageResult">
+        	<result name="purchaseApplyHistoryStorePageResult" type="json">
+                <param name="root">purchaseApplyHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findPurchaseApplyHistoryEntityById" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyHistoryEntityById">
+        	<result name="purchaseApplyHistoryEntity" type="json">
+                <param name="root">purchaseApplyHistoryEntity</param>
+            </result>
+        </action>
+        <action name="findPurchaseApplyDetailHistoryByPadhId" class="proope.purchase.action.PurchaseApplyAction" method="findPurchaseApplyDetailHistoryByPadhId">
+        	<result name="purchaseApplyDetailHistoryList" type="json">
+                <param name="root">purchaseApplyDetailHistoryList</param>
+            </result>
+        </action>
+        
+        <action name="createPurchaseOrder" class="proope.purchase.action.PurchaseOrderAction" method="createPurchaseOrder">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findPurchaseOrderStorePageResult" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderStorePageResult">
+        	<result name="purchaseOrderStorePageResult" type="json">
+                <param name="root">purchaseOrderStorePageResult</param>
+            </result>
+        </action>
+        <action name="findPurchaseOrderResultByPoId" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderResultByPoId">
+        	<result name="purchaseOrderResult" type="json">
+                <param name="root">purchaseOrderResult</param>
+            </result>
+        </action>
+        <action name="findPurchaseOrderDetailListByPoId" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderDetailListByPoId">
+        	<result name="purchaseOrderDetailList" type="json">
+                <param name="root">purchaseOrderDetailList</param>
+            </result>
+        </action>
+        <action name="findPurchaseOrderHistoryStorePageResult" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderHistoryStorePageResult">
+        	<result name="purchaseOrderHistoryStorePageResult" type="json">
+                <param name="root">purchaseOrderHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findPurchaseOrderDetailHistoryListByPohId" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderDetailHistoryListByPohId">
+        	<result name="purchaseOrderDetailHistoryList" type="json">
+                <param name="root">purchaseOrderDetailHistoryList</param>
+            </result>
+        </action>
+        
+        <action name="findPutWarehouseHistoryStorePageResult" class="proope.purchase.action.PurchaseOrderAction" method="findPutWarehouseHistoryStorePageResult">
+        	<result name="putWarehouseHistoryStorePageResult" type="json">
+                <param name="root">putWarehouseHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findPutWarehouseDetailHistoryListByPwhId" class="proope.purchase.action.PurchaseOrderAction" method="findPutWarehouseDetailHistoryListByPwhId">
+        	<result name="putWarehouseDetailHistoryList" type="json">
+                <param name="root">putWarehouseDetailHistoryList</param>
+            </result>
+        </action>
+        
+        <action name="exportPDFPutWarehouseHistory" class="proope.purchase.action.PurchaseOrderAction" method="exportPDFPutWarehouseHistory">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>      
+        
+        <action name="purchaseHistoryReportExport" class="proope.purchase.action.PurchaseReportAction" method="purchaseHistoryReportExport">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        
+        <action name="findPurchaseOrderDetailStorePageResult" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseOrderDetailStorePageResult">
+        	<result name="purchaseOrderDetailStorePageResult" type="json">
+                <param name="root">purchaseOrderDetailStorePageResult</param>
+            </result>
+        </action>
+         <action name="createArrivalsGoods" class="proope.purchase.action.PurchaseOrderAction" method="createArrivalsGoods">
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findPurchaseArrivalsGoodsHistoryStorePageResult" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseArrivalsGoodsHistoryStorePageResult">
+        	<result name="purchaseArrivalsGoodsHistoryStorePageResult" type="json">
+                <param name="root">purchaseArrivalsGoodsHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findPurchaseArrivalsGoodsDetailHistoryListByPaghId" class="proope.purchase.action.PurchaseOrderAction" method="findPurchaseArrivalsGoodsDetailHistoryListByPaghId">
+        	<result name="purchaseArrivalsGoodsDetailHistoryEntityList" type="json">
+                <param name="root">purchaseArrivalsGoodsDetailHistoryEntityList</param>
+            </result>
+        </action>
+    </package>
+    
+    
+    <package name="proopeBusiness" namespace="/proopeBusiness" extends="default">
+    	<action name="findNotSubmitSalesOrderStorePageResult" class="proope.business.action.SalesOrderAction" method="findNotSubmitSalesOrderStorePageResult">
+        	<result name="salesOrderStorePageResult" type="json">
+                <param name="root">salesOrderStorePageResult</param>
+            </result>
+        </action>
+        <action name="findSalesOrderResultBySalesOrderId" class="proope.business.action.SalesOrderAction" method="findSalesOrderResultBySalesOrderId">
+        	<result name="salesOrderResult" type="json">
+                <param name="root">salesOrderResult</param>
+            </result>
+        </action>
+        <action name="findSalesOrderDetailResultListBySalesOrderId" class="proope.business.action.SalesOrderAction" method="findSalesOrderDetailResultListBySalesOrderId">
+        	<result name="salesOrderDetailResultList" type="json">
+                <param name="root">salesOrderDetailResultList</param>
+            </result>
+        </action>
+        <action name="createSaleOrder" class="proope.business.action.SalesOrderAction" method="createSaleOrder">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="updateSaleOrder" class="proope.business.action.SalesOrderAction" method="updateSaleOrder">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="deleSaleOrder" class="proope.business.action.SalesOrderAction" method="deleSaleOrder">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="submitSaleOrder" class="proope.business.action.SalesOrderAction" method="submitSaleOrder">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findNotProcessSalesOrderStorePageResult" class="proope.business.action.SalesOrderAction" method="findNotProcessSalesOrderStorePageResult">
+        	<result name="salesOrderStorePageResult" type="json">
+                <param name="root">salesOrderStorePageResult</param>
+            </result>
+        </action>
+        <action name="sealOrderOutGoods" class="proope.business.action.SalesOrderAction" method="sealOrderOutGoods">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        
+        
+        <action name="findProductStorePageResultForBom" class="proope.business.action.BomAction" method="findProductStorePageResultForBom">
+        	<result name="productStorePageResult" type="json">
+                <param name="root">productStorePageResult</param>
+            </result>
+        </action>
+        <action name="findBomListByProductId" class="proope.business.action.BomAction" method="findBomListByProductId">
+        	<result name="bomResultList" type="json">
+                <param name="root">bomResultList</param>
+            </result>
+        </action>
+        <action name="editBomListByProductId" class="proope.business.action.BomAction" method="editBomListByProductId">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findOrderMaterialStorePageResult" class="proope.business.action.BomAction" method="findOrderMaterialStorePageResult">
+        	<result name="orderMaterialStorePageResult" type="json">
+                <param name="root">orderMaterialStorePageResult</param>
+            </result>
+        </action>
+    </package>
+    
+    <package name="proopeProduce" namespace="/proopeProduce" extends="default">
+    	<action name="findReceiveMaterialHistoryStorePageResult" class="proope.produce.action.ReceiverMaterialAction" method="findReceiveMaterialHistoryStorePageResult">
+        	<result name="receiveMaterialHistoryStorePageResult" type="json">
+                <param name="root">receiveMaterialHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="createReceiveMaterialHistory" class="proope.produce.action.ReceiverMaterialAction" method="createReceiveMaterialHistory">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findReceiveMaterialDetailHistoryListByRmhId" class="proope.produce.action.ReceiverMaterialAction" method="findReceiveMaterialDetailHistoryListByRmhId">
+        	<result name="receiveMaterialDetailHistoryEntityList" type="json">
+                <param name="root">receiveMaterialDetailHistoryEntityList</param>
+            </result>
+        </action>
+        
+        <action name="findProductPutWarehouseApplyStorePageResult" class="proope.produce.action.PutWarehouseAction" method="findProductPutWarehouseApplyStorePageResult">
+        	<result name="productPutWarehouseApplyStorePageResult" type="json">
+                <param name="root">productPutWarehouseApplyStorePageResult</param>
+            </result>
+        </action>
+        <action name="findProductPutWarehouseApplyDetailResultListByPpwaId" class="proope.produce.action.PutWarehouseAction" method="findProductPutWarehouseApplyDetailResultListByPpwaId">
+        	<result name="productPutWarehouseApplyDetailResultList" type="json">
+                <param name="root">productPutWarehouseApplyDetailResultList</param>
+            </result>
+        </action>
+        <action name="createProductPutWharehouseApply" class="proope.produce.action.PutWarehouseAction" method="createProductPutWharehouseApply">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findProductPutWarehouseHistoryStorePageResult" class="proope.produce.action.PutWarehouseAction" method="findProductPutWarehouseHistoryStorePageResult">
+        	<result name="productPutWarehouseHistoryStorePageResult" type="json">
+                <param name="root">productPutWarehouseHistoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findProductPutWarehouseDetailHistoryListByPpwhId" class="proope.produce.action.PutWarehouseAction" method="findProductPutWarehouseDetailHistoryListByPpwhId">
+        	<result name="productPutWarehouseDetailHistoryEntityList" type="json">
+                <param name="root">productPutWarehouseDetailHistoryEntityList</param>
+            </result>
+        </action>
+    </package>
+    
+    <package name="proopeQuality" namespace="/proopeQuality" extends="default">
+    	<action name="findPurchaseArrivalsGoodsDetailStorePageResult" class="proope.quality.action.MaterialQualityAction" method="findPurchaseArrivalsGoodsDetailStorePageResult">
+        	<result name="purchaseArrivalsGoodsDetailStorePageResult" type="json">
+                <param name="root">purchaseArrivalsGoodsDetailStorePageResult</param>
+            </result>
+        </action>
+        <action name="createMaterialPutWarehouse" class="proope.quality.action.MaterialQualityAction" method="createMaterialPutWarehouse">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+        <action name="findWaitCheckProductPutWarehouseApplyDetailStorePageResult" class="proope.quality.action.ProduceQualityAction" method="findWaitCheckProductPutWarehouseApplyDetailStorePageResult">
+        	<result name="productPutWarehouseApplyDetailStorePageResult" type="json">
+                <param name="root">productPutWarehouseApplyDetailStorePageResult</param>
+            </result>
+        </action>
+        <action name="createProductPutWarehouseHistory" class="proope.quality.action.ProduceQualityAction" method="createProductPutWarehouseHistory">
+           	<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="notLoginInter"/>
+        </action>
+    </package>
+    
+    <package name="proopeWarehouse" namespace="/proopeWarehouse" extends="default">
+    	<action name="findMaterialInventoryStorePageResult" class="proope.warehouse.action.WarehouseAction" method="findMaterialInventoryStorePageResult">
+        	<result name="materialInventoryStorePageResult" type="json">
+                <param name="root">materialInventoryStorePageResult</param>
+            </result>
+        </action>
+        <action name="findProductInventoryStorePageResult" class="proope.warehouse.action.WarehouseAction" method="findProductInventoryStorePageResult">
+        	<result name="productInventoryStorePageResult" type="json">
+                <param name="root">productInventoryStorePageResult</param>
+            </result>
+        </action>
+    </package>
+</struts>

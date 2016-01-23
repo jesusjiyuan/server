@@ -1,0 +1,19 @@
+/**
+ * 查询采购申请
+ */
+Ext.define("ERP.proope.purchase.store.purchaseApplyDetailStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.purchase.model.purchaseApplyDetailModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopePurchase/findPurchaseApplyDetailStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"purchaseApplyDetailList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

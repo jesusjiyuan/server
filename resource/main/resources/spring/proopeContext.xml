@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:tool="http://www.springframework.org/schema/tool" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:task="http://www.springframework.org/schema/task" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://www.springframework.org/schema/jee
+     http://www.springframework.org/schema/jee/spring-jee.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/util
+     http://www.springframework.org/schema/util/spring-util.xsd
+     http://www.springframework.org/schema/tool
+     http://www.springframework.org/schema/tool/spring-tool.xsd
+     http://www.springframework.org/schema/task
+     http://www.springframework.org/schema/task/spring-task.xsd"
+    default-lazy-init="true" default-autowire="byName">
+    
+    <bean id="basedataDao" class="proope.basedata.BasedataDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="basedataService" class="proope.basedata.service.BasedataServiceImpl">
+    	<property name="basedataDao" ref="basedataDao"></property>
+    </bean>
+    
+    <bean id="businessDao" class="proope.business.BusinessDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="bomService" class="proope.business.service.impl.BomServiceImpl">
+    	<property name="businessDao" ref="businessDao"></property>
+    </bean>
+    <bean id="salesOrderService" class="proope.business.service.impl.SalesOrderServiceImpl">
+    	<property name="businessDao" ref="businessDao"></property>
+    </bean>
+    
+    <bean id="produceDao" class="proope.produce.ProduceDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="receiverMaterialService" class="proope.produce.service.impl.ReceiverMaterialServiceImpl">
+    	<property name="produceDao" ref="produceDao"></property>
+    </bean>
+    <bean id="putWarehouseService" class="proope.produce.service.impl.PutWarehouseServiceImpl">
+    	<property name="produceDao" ref="produceDao"></property>
+    </bean>
+    
+    <bean id="purchaseDao" class="proope.purchase.PurchaseDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="purchaseApplyService" class="proope.purchase.service.impl.PurchaseApplyServiceImpl">
+    	<property name="purchaseDao" ref="purchaseDao"></property>
+    </bean>
+    <bean id="purchaseOrderService" class="proope.purchase.service.impl.PurchaseOrderServiceImpl">
+    	<property name="purchaseDao" ref="purchaseDao"></property>
+    </bean>
+    
+    <bean id="qualityDao" class="proope.quality.QualityDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="materialQualityService" class="proope.quality.service.impl.MaterialQualityServiceImpl">
+    	<property name="qualityDao" ref="qualityDao"></property>
+    </bean>
+    <bean id="produceQualityService" class="proope.quality.service.impl.ProduceQualityServiceImpl">
+    	<property name="qualityDao" ref="qualityDao"></property>
+    </bean>
+    
+    <bean id="warehouseDao" class="proope.warehouse.WarehouseDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="warehouseService" class="proope.warehouse.service.impl.WarehouseServiceImpl">
+    	<property name="warehouseDao" ref="warehouseDao"></property>
+    </bean>
+</beans>

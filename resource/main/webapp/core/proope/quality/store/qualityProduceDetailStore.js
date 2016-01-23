@@ -1,0 +1,19 @@
+/**
+ * 查询订单明细
+ */
+Ext.define("ERP.proope.quality.store.qualityProduceDetailStore",{
+    extend:'Ext.data.Store',
+    model:'ERP.proope.quality.model.qualityProduceDetailModel',
+    pageSize:25,
+    proxy:{
+        type:"ajax",
+        url:root+"/proopeQuality/findWaitCheckProductPutWarehouseApplyDetailStorePageResult.do",
+        pageParam:"pageNumber",
+        reader:{
+            type:"json",
+            root:"productPutWarehouseApplyDetailList",
+            totalProperty:"itemTotal"
+        }
+    },
+    autoLoad:true
+});

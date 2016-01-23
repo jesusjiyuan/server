@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-access="field">
+  <class name="proope.produce.to.entity.ProductPutWarehouseApplyHistoryEntity" table="tbl_product_put_warehouse_apply_history">
+    <id name="dm" type="string">
+        <column name="dm" />
+        <generator class="assigned" />
+    </id>
+    <property name="bmdm" type="string">
+        <column name="bmdm" />
+    </property>
+    <property name="bmmc" type="string">
+        <column name="bmmc" />
+    </property>
+	<property name="cjrq" type="timestamp">
+	    <column name="cjrq" />
+	</property>
+	<property name="cjr" type="string">
+        <column name="cjr" length="32" />
+    </property>
+  </class>
+</hibernate-mapping>
